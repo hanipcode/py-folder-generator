@@ -67,7 +67,10 @@ for structure in structures:
         current_path = os.path.abspath(os.curdir)
         current_folder_name = current_path.split("/")[-1]
     if structure["have_extension"]:
-        os.system('touch ' + structure["name"] + structure["extension"][0])
+        if len(structure["extension"][0]) != 1:
+            os.system('touch ' + structure["name"] + structure["extension"][0])
+        else:
+            os.system('touch '+ structure["extension"][0] + structure["name"])
     elif not structure["have_extension"]:
         os.system('mkdir --parent '+ structure["name"])
     print "- " * int(structure["level"]) + structure["name"]
