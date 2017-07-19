@@ -22,4 +22,46 @@ $ chmod +x install.sh
 ```
 
 ## USAGE
+### Config File Convention
+1. The name of the file could be anything
+2. you use happen to structure your config file
+3. You nest the folder by adding more hypen
+4. name without extension would be considered as folder
+5. but it will support config file convention like `.eslint` or `.babelrc` (a `.` in the first name of the file)
+
+### Running the script
 `$ generate-folder [YOUR_CONFIG_FILE]`
+
+## Example of Config File
+```
+-src
+--.babelrc
+--App.js
+--components
+---common
+----Button.js
+---footer
+----Copyright.js
+--Pages
+---Login.js
+---Generate
+----index.js
+---Timeline
+----index.js
+----footer.js
+--reducers
+---index.js
+--constants.js
+--index.js
+-api
+--index.js
+--loginapi
+---index.js
+```
+You can also use whitespace if you think it would be more readable like
+```
+- src
+- - .babelrc
+- - App.js
+...rest of config file
+```
